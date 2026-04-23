@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "docker": "docker build -t aegis-binder-web . && docker run --rm --init -p 8080:80 aegis-binder-web",
+    "docker:dev": "docker build -f Dockerfile.dev -t aegis-binder-web-dev . && docker run --rm --init -p 5173:5173 -v \"$PWD/src:/app/src\" -v \"$PWD/public:/app/public\" -v \"$PWD/index.html:/app/index.html\" aegis-binder-web-dev"
   },
   "dependencies": {
     "react": "^18.3.1",
