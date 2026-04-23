@@ -1,0 +1,15 @@
+node_modules
+dist
+.git
+.github
+.vscode
+.idea
+.vite
+*.log
+*.local
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+Dockerfile*
+.dockerignore
