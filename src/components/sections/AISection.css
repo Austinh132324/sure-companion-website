@@ -536,7 +536,7 @@
   text-transform: uppercase;
 }
 
-.dmo-ai-task-badge--ai    { background: #ede9fe; color: #7c3aed; }
+.dmo-ai-task-badge--aegis { background: #ede9fe; color: #7c3aed; }
 .dmo-ai-task-badge--email { background: #dbeafe; color: #1d4ed8; }
 .dmo-ai-task-badge--sms   { background: #dcfce7; color: #15803d; }
 

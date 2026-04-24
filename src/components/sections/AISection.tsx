@@ -20,15 +20,15 @@ const AI_FIELDS = [
 const AI_ANALYTICS = [
   { label: 'Risk Assessment',        value: 'Low Risk',            detail: 'Score: 82 / 100',       bar: 82,  color: '#16a34a' },
   { label: 'Renewal Likelihood',     value: '87%',                 detail: 'High probability',      bar: 87,  color: '#2563eb' },
-  { label: 'Cross-sell Opportunity', value: 'Commercial Property', detail: 'AI recommends upsell',  bar: null, color: '#7c3aed' },
+  { label: 'Cross-sell Opportunity', value: 'Commercial Property', detail: 'Aegis recommends upsell', bar: null, color: '#7c3aed' },
   { label: 'Premium vs. Market',     value: '3% below avg.',       detail: 'Competitively priced',  bar: null, color: '#0891b2' },
 ];
 
 const AI_TASKS = [
-  { name: 'Policy Review',    detail: 'AI analyzes renewal at expiry · May 1, 2027', badge: 'AI'    },
-  { name: 'Renewal Email',    detail: 'Auto-sent 30 days before expiry',              badge: 'Email' },
-  { name: 'SMS Reminder',     detail: 'Text client 7 days before renewal',            badge: 'SMS'   },
-  { name: 'Cross-sell Alert', detail: 'Notify when cross-sell score exceeds 70%',     badge: 'AI'    },
+  { name: 'Policy Review',    detail: 'Aegis analyzes renewal at expiry · May 1, 2027', badge: 'Aegis' },
+  { name: 'Renewal Email',    detail: 'Auto-sent 30 days before expiry',                 badge: 'Email' },
+  { name: 'SMS Reminder',     detail: 'Text client 7 days before renewal',               badge: 'SMS'   },
+  { name: 'Cross-sell Alert', detail: 'Notify when cross-sell score exceeds 70%',        badge: 'Aegis' },
 ];
 
 const POINTS = [
@@ -43,8 +43,8 @@ const STEP_HINT: Record<AIStep, string> = {
   analyzing:  'Reading document…',
   extracting: 'Extracting fields…',
   portal:     'Client injected into portal',
-  analytics:  'AI insights generated',
-  tasks:      'AI tasks configured · replaying in 5s',
+  analytics:  'Aegis insights generated',
+  tasks:      'Aegis tasks configured · replaying in 5s',
 };
 
 /* ─── PDF icon (reused in multiple states) ───────────────────────── */
@@ -131,7 +131,7 @@ function AIDemo() {
           <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M6 1l1.1 3.4H10L7.5 6.3l.9 3.2L6 7.8 3.6 9.5l.9-3.2L2 4.4h2.9L6 1z" />
           </svg>
-          AI Intake
+          Aegis
         </div>
         <span className="ab-ai-demo__head-title">{STEP_HINT[step]}</span>
         {step === 'tasks' && (
@@ -182,7 +182,7 @@ function AIDemo() {
               <div className="dmo-ai-spinner" aria-hidden="true" />
               <div>
                 <div className="dmo-ai-status-title">
-                  AI is reading your document
+                  Aegis is reading your document
                   <span className="dmo-ai-dots"><span>.</span><span>.</span><span>.</span></span>
                 </div>
                 <div className="dmo-ai-status-sub">Extracting client, policy, and coverage details</div>
@@ -265,7 +265,7 @@ function AIDemo() {
                 <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M6 1l1.1 3.4H10L7.5 6.3l.9 3.2L6 7.8 3.6 9.5l.9-3.2L2 4.4h2.9L6 1z" />
                 </svg>
-                AI Insights
+                Aegis Insights
               </div>
               <div className="dmo-ai-portal-chips">
                 {[
@@ -301,7 +301,7 @@ function AIDemo() {
                 <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M6 1l1.1 3.4H10L7.5 6.3l.9 3.2L6 7.8 3.6 9.5l.9-3.2L2 4.4h2.9L6 1z" />
                 </svg>
-                AI Insights
+                Aegis Insights
               </div>
               <span className="dmo-ai-analytics-sub">Marcus Delgado · Pacific Ventures Inc.</span>
             </div>
@@ -339,7 +339,7 @@ function AIDemo() {
                   <path d="M7 1v2M7 11v2M1 7h2M11 7h2M3 3l1.4 1.4M9.6 9.6L11 11M3 11l1.4-1.4M9.6 4.4L11 3" />
                   <circle cx="7" cy="7" r="2.5" fill="currentColor" stroke="none" opacity="0.3" />
                 </svg>
-                AI Powered Tasks
+                Aegis Tasks
               </div>
               <div className="dmo-ai-tasks-sub">Automations configured for Marcus Delgado</div>
             </div>
