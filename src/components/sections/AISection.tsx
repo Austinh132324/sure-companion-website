@@ -391,7 +391,7 @@ export function AISection() {
         <div className="ab-ai-section__grid">
 
           <div className="ab-ai-section__content animate slide-left">
-            <span className="eyebrow ab-ai-section__eyebrow">Meet Aegis</span>
+            <span className="ab-ai-section__eyebrow">Meet Aegis</span>
             <span className="ab-ai-section__pronunciation" aria-label="Pronounced ee-jis">
               pronounced <em>EE-jis</em>
             </span>

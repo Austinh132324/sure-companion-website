@@ -68,7 +68,13 @@
 }
 
 .ab-ai-section__eyebrow {
-  color: rgba(167, 139, 250, 0.9);
+  display: block;
+  font-size: clamp(1.5rem, 1.6vw + 0.85rem, 2.1rem);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #c4b5fd;
+  margin-bottom: 6px;
 }
 
 .ab-ai-section__pronunciation {
