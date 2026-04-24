@@ -36,10 +36,13 @@
     padding-block: 64px 72px;
   }
 
-  /* Hide the full app chrome — too complex for small screens */
-  .ab-hero__demo,
-  .ab-hero__demo-hint {
-    display: none;
+  /* Shrink the app chrome so it fits closer to a phone viewport */
+  .ab-hero__demo .ab-demo__app {
+    height: 440px;
+  }
+
+  .ab-hero__demo .ab-demo__chrome {
+    min-width: 460px;
   }
 
   /* Center the solo hero content */
