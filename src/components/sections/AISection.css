@@ -67,12 +67,6 @@
   gap: 22px;
 }
 
-.ab-ai-section__mascot-row {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 4px;
-}
-
 .ab-ai-section__eyebrow {
   color: rgba(167, 139, 250, 0.9);
 }
@@ -90,6 +84,14 @@
   font-style: italic;
   color: rgba(255, 255, 255, 0.85);
   font-weight: var(--font-weight-medium);
+}
+
+.ab-ai-section__availability {
+  margin: 0 0 16px;
+  font-size: 0.82rem;
+  color: rgba(167, 139, 250, 0.85);
+  font-style: italic;
+  letter-spacing: 0.01em;
 }
 
 .ab-ai-section__title {
