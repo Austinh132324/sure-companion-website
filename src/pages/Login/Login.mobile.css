@@ -22,3 +22,30 @@
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .ab-login {
+    padding-block: 40px 32px;
+    padding-inline: 16px;
+  }
+
+  .ab-login__card {
+    padding: 24px 20px;
+  }
+
+  .ab-login__title {
+    font-size: 1.35rem;
+  }
+
+  .ab-status__pill {
+    padding: 8px 14px 8px 10px;
+  }
+
+  .ab-status__label {
+    font-size: 0.62rem;
+  }
+
+  .ab-status__bar {
+    width: 160px;
+  }
+}

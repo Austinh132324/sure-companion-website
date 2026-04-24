@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -24,6 +28,7 @@ body {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 #root {
@@ -104,4 +109,12 @@ main {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+}
+
+.ab-route-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  flex: 1 1 auto;
 }

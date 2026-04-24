@@ -25,7 +25,7 @@ const VALUES = [
 
 export default function About() {
   useEffect(() => {
-    document.title = 'About | Aegis Binder';
+    document.title = 'About | Sure Companion';
   }, []);
 
   return (
@@ -35,7 +35,7 @@ export default function About() {
           <SectionHeading
             eyebrow="About"
             title="A platform with a point of view."
-            description="Aegis Binder exists because the people who run insurance agencies deserve tools that match the care and precision they bring to their clients."
+            description="Sure Companion exists because the people who run insurance agencies deserve tools that match the care and precision they bring to their clients."
           />
         </Container>
       </section>
@@ -51,9 +51,9 @@ export default function About() {
               </p>
             </article>
             <article>
-              <h2>Why Aegis Binder exists</h2>
+              <h2>Why Sure Companion exists</h2>
               <p>
-                Agencies juggle disjointed tools, manual reports, and lost context. Aegis Binder brings the work
+                Agencies juggle disjointed tools, manual reports, and lost context. Sure Companion brings the work
                 together so producers can focus on the conversation that matters instead of fighting the stack.
               </p>
             </article>

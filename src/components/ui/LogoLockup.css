@@ -1,42 +1,123 @@
 .ab-logo-link {
   display: inline-flex;
   align-items: center;
-  color: inherit;
   text-decoration: none;
   border-radius: var(--radius-sm);
+  outline-offset: 4px;
 }
+
+/* ─── Full lockup (shield + wordmark) ───────────────────────────── */
 
 .ab-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  transition: opacity 200ms ease;
+}
+
+.ab-logo-link:hover .ab-logo {
+  opacity: 0.92;
+}
+
+.ab-logo__icon {
   display: block;
-  height: 36px;
   width: auto;
+  flex-shrink: 0;
+  transition: filter 300ms ease, transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.ab-logo--sm {
-  height: 28px;
+.ab-logo-link:hover .ab-logo__icon {
+  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.55));
+  transform: scale(1.04);
 }
 
-.ab-logo--lg {
-  height: 52px;
+.ab-logo__wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  user-select: none;
 }
 
-.ab-logo--shield {
-  height: 48px;
-  width: 48px;
+/* Default (light pages): navy */
+.ab-logo__word {
+  color: var(--color-navy);
+  transition: color 200ms ease;
 }
 
-.ab-logo--shield.ab-logo--sm {
-  height: 32px;
-  width: 32px;
+/* On the dark header: white */
+.ab-header .ab-logo__word {
+  color: rgba(255, 255, 255, 0.92);
 }
 
-.ab-logo--shield.ab-logo--lg {
-  height: 72px;
-  width: 72px;
+.ab-logo__word--accent {
+  background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
+/* Brighter gradient on dark header */
+.ab-header .ab-logo__word--accent {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Size variants ─────────────────────────────────────────────── */
+
+.ab-logo--sm .ab-logo__icon     { height: 26px; }
+.ab-logo--sm .ab-logo__wordmark { font-size: 0.95rem; gap: 4px; }
+.ab-logo--sm                    { gap: 9px; }
+
+.ab-logo--md .ab-logo__icon     { height: 36px; }
+.ab-logo--md .ab-logo__wordmark { font-size: 1.22rem; }
+
+.ab-logo--lg .ab-logo__icon     { height: 48px; }
+.ab-logo--lg .ab-logo__wordmark { font-size: 1.55rem; gap: 6px; }
+.ab-logo--lg                    { gap: 13px; }
+
+/* ─── Shield-only (Login page) ──────────────────────────────────── */
+
+.ab-logo__shield-only {
+  display: block;
+  width: auto;
+  transition: filter 280ms ease, transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ab-logo-link:hover .ab-logo__shield-only {
+  filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.5));
+  transform: scale(1.04);
+}
+
+.ab-logo__shield-only--sm { height: 40px; }
+.ab-logo__shield-only--md { height: 56px; }
+.ab-logo__shield-only--lg { height: 80px; }
+
+/* ─── Copyright symbol ──────────────────────────────────────────── */
+
+.ab-logo__copyright {
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  color: rgba(255, 255, 255, 0.45);
+  align-self: center;
+  line-height: 1;
+  margin-left: 4px;
+  user-select: none;
+}
+
+.ab-footer .ab-logo__copyright {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  .ab-logo {
-    height: 32px;
-  }
+  .ab-logo--md .ab-logo__icon     { height: 30px; }
+  .ab-logo--md .ab-logo__wordmark { font-size: 1.05rem; }
 }

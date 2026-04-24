@@ -1,6 +1,7 @@
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
+import { useInView } from '../../hooks/useInView';
 import './SecurityPreview.css';
 
 const POINTS = [
@@ -11,15 +12,17 @@ const POINTS = [
 ];
 
 export function SecurityPreview() {
+  const ref = useInView<HTMLElement>();
+
   return (
-    <section className="ab-security-preview" aria-labelledby="security-preview-title">
+    <section ref={ref} className="ab-security-preview" aria-labelledby="security-preview-title">
       <Container>
         <div className="ab-security-preview__grid">
-          <div className="ab-security-preview__content">
+          <div className="ab-security-preview__content animate slide-left">
             <SectionHeading
               eyebrow="Security"
               title={<span id="security-preview-title">Trust belongs in the platform, not the appendix.</span>}
-              description="Aegis Binder is built around responsible access, responsible data handling, and a clear direction for the controls agencies need as they grow."
+              description="Sure Companion is built around responsible access, responsible data handling, and a clear direction for the controls agencies need as they grow."
             />
             <div className="ab-security-preview__ctas">
               <Button to="/security" variant="primary">
@@ -31,11 +34,11 @@ export function SecurityPreview() {
             </div>
           </div>
 
-          <aside className="ab-security-preview__card" aria-label="Security highlights">
+          <aside className="ab-security-preview__card animate slide-right" aria-label="Security highlights">
             <h3>How we think about security</h3>
             <ul>
-              {POINTS.map((item) => (
-                <li key={item}>
+              {POINTS.map((item, i) => (
+                <li key={item} className={`animate fade-up delay-${i + 1}`}>
                   <svg
                     viewBox="0 0 24 24"
                     width="20"

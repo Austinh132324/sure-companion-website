@@ -1,18 +1,19 @@
 .ab-security-preview {
-  padding-block: 80px;
+  padding-block: 88px;
   background: linear-gradient(180deg, var(--color-bg) 0%, #ffffff 100%);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
 
 .ab-security-preview__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
+  display: flex;
   align-items: center;
+  gap: 56px;
 }
 
 .ab-security-preview__content {
+  flex: 1.1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -24,16 +25,33 @@
   flex-wrap: wrap;
 }
 
+/* ─── Card ───────────────────────────────────────────────────────── */
+
 .ab-security-preview__card {
+  flex: 0.9 1 0;
+  min-width: 0;
+  position: relative;
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+/* Gradient top-edge accent */
+.ab-security-preview__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent-blue), #60a5fa, var(--color-deep-blue));
 }
 
 .ab-security-preview__card h3 {
-  margin: 0 0 16px;
+  margin: 0 0 20px;
 }
 
 .ab-security-preview__card ul {
@@ -42,7 +60,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .ab-security-preview__card li {
@@ -58,12 +76,19 @@
   color: var(--color-accent-blue);
   flex-shrink: 0;
   margin-top: 2px;
+  filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.4));
 }
 
 @media (max-width: 1024px) {
   .ab-security-preview__grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 32px;
+  }
+
+  .ab-security-preview__content,
+  .ab-security-preview__card {
+    flex: none;
+    width: 100%;
   }
 }
 
@@ -79,5 +104,11 @@
 
   .ab-security-preview__ctas .ab-button {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ab-security-preview {
+    padding-block: 40px;
   }
 }

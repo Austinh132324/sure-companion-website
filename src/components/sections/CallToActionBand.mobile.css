@@ -30,3 +30,13 @@
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .ab-cta-band {
+    padding-block: 32px;
+  }
+
+  .ab-cta-band__inner {
+    padding: 24px 20px;
+  }
+}

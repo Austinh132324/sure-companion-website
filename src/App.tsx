@@ -2,15 +2,25 @@ import { BrowserRouter } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { AppRoutes } from './routes';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 
-export default function App() {
+function AppShell() {
+  useSmoothScroll();
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <main id="main">
         <AppRoutes />
       </main>
       <Footer />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+      <AppShell />
     </BrowserRouter>
   );
 }

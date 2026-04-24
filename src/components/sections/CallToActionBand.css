@@ -5,31 +5,49 @@
 .ab-cta-band__inner {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0b2341 0%, #1d4ed8 80%, #2563eb 100%);
+  background: linear-gradient(135deg, #0b2341 0%, #1a3a7a 35%, #1d4ed8 65%, #2563eb 85%, #0f3060 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
   color: var(--color-white);
   border-radius: var(--radius-xl);
-  padding: 48px 56px;
+  padding: 52px 60px;
   display: grid;
   grid-template-columns: 1.6fr 1fr;
   align-items: center;
   gap: 32px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-lg);
 }
 
+/* Top-right primary orb */
+.ab-cta-band__inner::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* Bottom-left secondary orb */
 .ab-cta-band__inner::after {
   content: '';
   position: absolute;
-  top: -80px;
-  right: -80px;
+  bottom: -120px;
+  left: -60px;
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  background: radial-gradient(closest-side, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0));
   pointer-events: none;
+  animation: pulseGlow 7s ease-in-out infinite reverse;
 }
 
 .ab-cta-band__eyebrow {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .ab-cta-band__title {
@@ -38,7 +56,7 @@
 }
 
 .ab-cta-band__description {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.05rem;
   max-width: 520px;
 }
@@ -48,10 +66,12 @@
   gap: 12px;
   justify-content: flex-end;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .ab-cta-band__actions .ab-button--ghost {
   --btn-fg: var(--color-white);
-  --btn-bg: rgba(255, 255, 255, 0.08);
-  --btn-bg-hover: rgba(255, 255, 255, 0.18);
+  --btn-bg: rgba(255, 255, 255, 0.1);
+  --btn-bg-hover: rgba(255, 255, 255, 0.2);
 }

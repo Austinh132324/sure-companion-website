@@ -4,7 +4,7 @@ export interface SecurityPoint {
 }
 
 export const SECURITY_INTRO = {
-  eyebrow: 'Security at Aegis Binder',
+  eyebrow: 'Security at Sure Companion',
   title: 'Built with trust at the center.',
   description:
     'We treat the security of agency and client information as a core part of the product — not a checkbox. Our approach focuses on responsible access, responsible data handling, and a roadmap for the controls that mature platforms need.',
@@ -26,7 +26,7 @@ export const SECURITY_SECTIONS: { id: string; title: string; description: string
     id: 'roles',
     title: 'Role-aware platform',
     description:
-      'Access should match the job. Aegis Binder is built around role-aware access so producers, service teams, and leadership each see what they need.',
+      'Access should match the job. Sure Companion is built around role-aware access so producers, service teams, and leadership each see what they need.',
     points: [
       { title: 'Clear role boundaries', description: 'Least-privilege as a default posture, not an afterthought.' },
       { title: 'Configurable over time', description: 'Roles will evolve with the needs of real agencies using the platform.' },

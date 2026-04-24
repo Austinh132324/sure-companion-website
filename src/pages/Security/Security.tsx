@@ -7,7 +7,7 @@ import './Security.css';
 
 export default function Security() {
   useEffect(() => {
-    document.title = 'Security | Aegis Binder';
+    document.title = 'Security | Sure Companion';
   }, []);
 
   return (

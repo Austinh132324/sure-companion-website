@@ -1,0 +1,135 @@
+/* ─── Float ──────────────────────────────────────────────────────── */
+
+@keyframes aegisFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ─── Aura breathe ───────────────────────────────────────────────── */
+
+@keyframes aegisAura {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.55; }
+}
+
+@keyframes aegisAura2 {
+  0%, 100% { opacity: 0.12; }
+  50%       { opacity: 0.25; }
+}
+
+/* ─── Eye glow pulse ─────────────────────────────────────────────── */
+
+@keyframes aegisEyePulse {
+  0%, 100% { opacity: 0.65; }
+  50%       { opacity: 1; }
+}
+
+/* ─── Blink ──────────────────────────────────────────────────────── */
+
+@keyframes aegisBlink {
+  0%, 93%, 100% { transform: scaleY(1); }
+  96%            { transform: scaleY(0.06); }
+}
+
+/* ─── Scan ───────────────────────────────────────────────────────── */
+
+@keyframes aegisScan {
+  0%   { transform: translateY(0);     opacity: 0; }
+  6%   { opacity: 0.55; }
+  94%  { opacity: 0.55; }
+  100% { transform: translateY(116px); opacity: 0; }
+}
+
+/* ─── LED pulse ──────────────────────────────────────────────────── */
+
+@keyframes aegisLed {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 1; }
+}
+
+/* ─── Wrapper ────────────────────────────────────────────────────── */
+
+.aegis-mascot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  user-select: none;
+}
+
+.aegis-mascot-svg {
+  animation: aegisFloat 6s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 24px rgba(37, 99, 235, 0.5))
+    drop-shadow(0 20px 48px rgba(0, 0, 0, 0.45));
+}
+
+/* ─── Aura ───────────────────────────────────────────────────────── */
+
+.aegis-aura-1 {
+  animation: aegisAura  4s ease-in-out infinite;
+}
+
+.aegis-aura-2 {
+  animation: aegisAura2 4s ease-in-out infinite 0.5s;
+}
+
+/* ─── Eyes ───────────────────────────────────────────────────────── */
+
+.aegis-eye-glow {
+  animation: aegisEyePulse 2.4s ease-in-out infinite;
+}
+
+.aegis-eye-l {
+  transform-origin: 74px 105px;
+  animation: aegisBlink 5.5s ease-in-out infinite;
+}
+
+.aegis-eye-r {
+  transform-origin: 126px 105px;
+  animation: aegisBlink 5.5s ease-in-out infinite 0.07s;
+}
+
+/* ─── Scan ───────────────────────────────────────────────────────── */
+
+.aegis-scan {
+  animation: aegisScan 3.6s ease-in-out infinite 1.2s;
+}
+
+/* ─── Name badge ─────────────────────────────────────────────────── */
+
+.aegis-name-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  border-radius: 999px;
+  padding: 6px 16px 6px 10px;
+}
+
+.aegis-name-badge__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3b82f6;
+  animation: aegisLed 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.aegis-name-badge__text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #93c5fd;
+}
+
+.aegis-name-badge__sub {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 8px;
+  margin-left: 2px;
+}

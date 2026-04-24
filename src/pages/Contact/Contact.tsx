@@ -6,7 +6,7 @@ import './Contact.css';
 
 export default function Contact() {
   useEffect(() => {
-    document.title = 'Contact | Aegis Binder';
+    document.title = 'Contact | Sure Companion';
   }, []);
 
   return (
@@ -28,7 +28,7 @@ export default function Contact() {
               <h2>How we can help</h2>
               <p>
                 Whether you’re exploring a switch or want to see the platform in context, we’re happy to walk you
-                through what Aegis Binder can do today and where it’s headed next.
+                through what Sure Companion can do today and where it’s headed next.
               </p>
               <ul>
                 <li>Product demos for agency leaders and producers.</li>
@@ -37,7 +37,7 @@ export default function Contact() {
               </ul>
               <div className="ab-contact__contact-line">
                 <span className="eyebrow">Prefer email?</span>
-                <a href="mailto:hello@aegisbinder.com">hello@aegisbinder.com</a>
+                <a href="mailto:hello@surecompanion.com">hello@surecompanion.com</a>
               </div>
             </aside>
             <div className="ab-contact__form">

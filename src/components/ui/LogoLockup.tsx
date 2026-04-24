@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoUrl from '../../assets/logo/aegis-binder-logo.svg';
-import shieldUrl from '../../assets/logo/aegis-binder-shield-ab.svg';
+import shieldUrl from '../../assets/logo/sure-companion-shield.png';
 import './LogoLockup.css';
 
 interface LogoLockupProps {
@@ -8,7 +7,6 @@ interface LogoLockupProps {
   size?: 'sm' | 'md' | 'lg';
   asLink?: boolean;
   to?: string;
-  title?: string;
 }
 
 export function LogoLockup({
@@ -16,20 +14,29 @@ export function LogoLockup({
   size = 'md',
   asLink = true,
   to = '/',
-  title = 'Aegis Binder',
 }: LogoLockupProps) {
-  const src = variant === 'shield' ? shieldUrl : logoUrl;
-  const classes = ['ab-logo', `ab-logo--${variant}`, `ab-logo--${size}`].join(' ');
+  const content =
+    variant === 'shield' ? (
+      <img
+        src={shieldUrl}
+        alt="Sure Companion"
+        className={`ab-logo__shield-only ab-logo__shield-only--${size}`}
+      />
+    ) : (
+      <div className={`ab-logo ab-logo--${size}`}>
+        <img src={shieldUrl} alt="" className="ab-logo__icon" aria-hidden="true" />
+        <span className="ab-logo__wordmark" aria-label="Sure Companion">
+          <span className="ab-logo__word">Sure</span>
+          <span className="ab-logo__word ab-logo__word--accent">Companion</span>
+        </span>
+      </div>
+    );
 
-  const img = (
-    <img src={src} alt={title} className={classes} />
-  );
-
-  if (!asLink) return img;
+  if (!asLink) return content;
 
   return (
-    <Link to={to} className="ab-logo-link" aria-label={`${title} — home`}>
-      {img}
+    <Link to={to} className="ab-logo-link" aria-label="Sure Companion — home">
+      {content}
     </Link>
   );
 }

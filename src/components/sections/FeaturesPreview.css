@@ -15,13 +15,12 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-@media (max-width: 1024px) {
-  .ab-features-preview__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.ab-features-preview__grid > * {
+  flex: 1 1 220px;
+  min-width: 0;
 }

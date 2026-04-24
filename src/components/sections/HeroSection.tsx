@@ -1,6 +1,6 @@
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
-import shieldUrl from '../../assets/logo/aegis-binder-shield-ab.svg';
+import { DemoChrome } from './DemoChrome';
 import { HERO } from '../../data/siteContent';
 import './HeroSection.css';
 import './HeroSection.mobile.css';
@@ -8,13 +8,16 @@ import './HeroSection.mobile.css';
 export function HeroSection() {
   return (
     <section className="ab-hero" aria-labelledby="hero-title">
-      <div className="ab-hero__glow" aria-hidden="true" />
-      <Container>
+      <div className="ab-hero__glow ab-hero__glow--1" aria-hidden="true" />
+      <div className="ab-hero__glow ab-hero__glow--2" aria-hidden="true" />
+
+      <Container size="wide">
         <div className="ab-hero__grid">
           <div className="ab-hero__content">
-            <span className="eyebrow">{HERO.eyebrow}</span>
+            <span className="eyebrow ab-hero__eyebrow">{HERO.eyebrow}</span>
             <h1 id="hero-title" className="ab-hero__title">
-              {HERO.headline}
+              Manage clients and policies with{' '}
+              <span className="ab-hero__title-accent">clarity and confidence.</span>
             </h1>
             <p className="ab-hero__subtitle">{HERO.subheadline}</p>
             <div className="ab-hero__ctas">
@@ -27,18 +30,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="ab-hero__visual" aria-hidden="true">
-            <div className="ab-hero__visual-card">
-              <img src={shieldUrl} alt="" className="ab-hero__shield" />
-              <div className="ab-hero__ribbon ab-hero__ribbon--1">
-                <div className="ab-hero__chip">Policy 2045</div>
-                <div className="ab-hero__chip ab-hero__chip--muted">Renewal in 32 days</div>
-              </div>
-              <div className="ab-hero__ribbon ab-hero__ribbon--2">
-                <div className="ab-hero__chip">Book health</div>
-                <div className="ab-hero__chip ab-hero__chip--accent">+4.1%</div>
-              </div>
-            </div>
+          <div className="ab-hero__demo" aria-hidden="true">
+            <DemoChrome />
+            <p className="ab-hero__demo-hint">Click Dashboard, Clients, or Policies to explore.</p>
           </div>
         </div>
       </Container>

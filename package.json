@@ -1,5 +1,5 @@
 {
-  "name": "aegis-binder",
+  "name": "sure-companion",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -8,8 +8,12 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "tsc --noEmit",
-    "docker": "docker build -t aegis-binder-web . && docker run --rm --init -p 8080:80 aegis-binder-web",
-    "docker:dev": "docker build -f Dockerfile.dev -t aegis-binder-web-dev . && docker run --rm --init -p 5173:5173 -v \"$PWD/src:/app/src\" -v \"$PWD/public:/app/public\" -v \"$PWD/index.html:/app/index.html\" aegis-binder-web-dev"
+    "docker": "docker build -t sure-companion-web . && docker run -d --init --name sure-companion-website -p 8080:80 sure-companion-web",
+    "docker:dev": "docker build -f Dockerfile.dev -t sure-companion-web-dev . && docker run --rm --init -p 5173:5173 -v \"$PWD/src:/app/src\" -v \"$PWD/public:/app/public\" -v \"$PWD/index.html:/app/index.html\" sure-companion-web-dev"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -32,7 +32,7 @@ export function ContactForm() {
       <div className="ab-contact-form ab-contact-form--success" role="status" aria-live="polite">
         <h3>Thanks — we’ll be in touch.</h3>
         <p>
-          We received your note. A member of the Aegis Binder team will reach out shortly to follow up.
+          We received your note. A member of the Sure Companion team will reach out shortly to follow up.
         </p>
         <Button
           variant="secondary"

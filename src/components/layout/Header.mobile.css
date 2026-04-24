@@ -2,10 +2,6 @@
   .ab-header__nav {
     display: none;
   }
-
-  .ab-header__inner {
-    grid-template-columns: auto 1fr auto;
-  }
 }
 
 @media (max-width: 768px) {
@@ -20,5 +16,6 @@
 
   .ab-header__menu-btn {
     display: inline-flex;
+    margin-left: auto;
   }
 }

@@ -1,14 +1,17 @@
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
+import { useInView } from '../../hooks/useInView';
 import { CTA_BAND } from '../../data/siteContent';
 import './CallToActionBand.css';
 import './CallToActionBand.mobile.css';
 
 export function CallToActionBand() {
+  const ref = useInView<HTMLElement>();
+
   return (
-    <section className="ab-cta-band" aria-labelledby="cta-band-title">
+    <section ref={ref} className="ab-cta-band" aria-labelledby="cta-band-title">
       <Container>
-        <div className="ab-cta-band__inner">
+        <div className="ab-cta-band__inner animate scale-up">
           <div className="ab-cta-band__copy">
             <span className="eyebrow ab-cta-band__eyebrow">{CTA_BAND.eyebrow}</span>
             <h2 id="cta-band-title" className="ab-cta-band__title">{CTA_BAND.headline}</h2>
