@@ -1,5 +1,6 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Button } from '../ui/Button';
+import { AegisSpinner, type SpinnerStatus } from '../ui/AegisSpinner';
 import './ContactForm.css';
 import './ContactForm.mobile.css';
 
@@ -10,11 +11,26 @@ interface FormState {
   message: string;
 }
 
+type Stage = 'idle' | 'sending' | 'done';
+
 const EMPTY: FormState = { name: '', email: '', company: '', message: '' };
+
+const GREEN_PALETTE = {
+  navyDark: '#064E3B',
+  navyMid:  '#047857',
+  blue:     '#10B981',
+  blueLt:   '#6EE7B7',
+};
 
 export function ContactForm() {
   const [values, setValues] = useState<FormState>(EMPTY);
-  const [submitted, setSubmitted] = useState(false);
+  const [stage, setStage] = useState<Stage>('idle');
+  const [spinnerStatus, setSpinnerStatus] = useState<SpinnerStatus>('loading');
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, []);
 
   const update = (field: keyof FormState) => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -24,23 +40,46 @@ export function ContactForm() {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setStage('sending');
+    setSpinnerStatus('loading');
+    timerRef.current = setTimeout(() => setSpinnerStatus('success'), 5000);
   };
 
-  if (submitted) {
+  const reset = () => {
+    setValues(EMPTY);
+    setSpinnerStatus('loading');
+    setStage('idle');
+  };
+
+  if (stage === 'sending') {
+    return (
+      <div
+        className="ab-contact-form ab-contact-form--sending"
+        role="status"
+        aria-live="polite"
+        aria-label="Sending message"
+      >
+        <AegisSpinner
+          size={160}
+          status={spinnerStatus}
+          palette={GREEN_PALETTE}
+          onComplete={() => setStage('done')}
+        />
+        <p className="ab-contact-form__sending-label">
+          {spinnerStatus === 'success' ? 'Message sent.' : 'Sending your message…'}
+        </p>
+      </div>
+    );
+  }
+
+  if (stage === 'done') {
     return (
       <div className="ab-contact-form ab-contact-form--success" role="status" aria-live="polite">
         <h3>Thanks — we’ll be in touch.</h3>
         <p>
           We received your note. A member of the Sure Companion team will reach out shortly to follow up.
         </p>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            setValues(EMPTY);
-            setSubmitted(false);
-          }}
-        >
+        <Button variant="secondary" onClick={reset}>
           Send another message
         </Button>
       </div>

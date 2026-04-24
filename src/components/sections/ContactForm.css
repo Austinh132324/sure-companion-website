@@ -75,3 +75,17 @@
 .ab-contact-form--success p {
   margin-bottom: 20px;
 }
+
+.ab-contact-form--sending {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 320px;
+  padding: 48px 32px;
+}
+
+.ab-contact-form__sending-label {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-navy);
+}
