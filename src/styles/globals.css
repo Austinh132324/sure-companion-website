@@ -111,6 +111,12 @@ main {
   flex-direction: column;
 }
 
+@media (max-width: 768px) {
+  main {
+    padding-top: 64px;
+  }
+}
+
 .ab-route-fallback {
   display: flex;
   align-items: center;

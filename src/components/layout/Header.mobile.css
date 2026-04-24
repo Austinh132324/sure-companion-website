@@ -5,6 +5,14 @@
 }
 
 @media (max-width: 768px) {
+  .ab-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
   .ab-header__inner {
     height: 64px;
     gap: 12px;
