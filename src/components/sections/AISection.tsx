@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Container } from '../ui/Container';
-import { AegisMascot } from '../ui/AegisMascot';
 import { useInView } from '../../hooks/useInView';
 import './DemoSection.css';
 import './AISection.css';
@@ -392,13 +391,13 @@ export function AISection() {
         <div className="ab-ai-section__grid">
 
           <div className="ab-ai-section__content animate slide-left">
-            <div className="ab-ai-section__mascot-row">
-              <AegisMascot size={148} />
-            </div>
-            <span className="eyebrow ab-ai-section__eyebrow">Meet Aegis — Your AI Assistant</span>
+            <span className="eyebrow ab-ai-section__eyebrow">Meet Aegis</span>
             <span className="ab-ai-section__pronunciation" aria-label="Pronounced ee-jis">
               pronounced <em>EE-jis</em>
             </span>
+            <p className="ab-ai-section__availability">
+              *Available only in the Sure Companion Portal
+            </p>
             <h2 id="ai-title" className="ab-ai-section__title">
               Drop a PDF.<br />
               <span className="ab-ai-section__title-accent">Aegis handles the rest.</span>
