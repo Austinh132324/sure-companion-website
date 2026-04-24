@@ -36,13 +36,52 @@
     padding-block: 64px 72px;
   }
 
-  /* Shrink the app chrome so it fits closer to a phone viewport */
-  .ab-hero__demo .ab-demo__app {
-    height: 440px;
+  /* Let the chrome shrink to the viewport rather than forcing horizontal scroll */
+  .ab-hero__demo {
+    overflow-x: visible;
   }
 
   .ab-hero__demo .ab-demo__chrome {
-    min-width: 460px;
+    min-width: 0;
+  }
+
+  /* Sidebar is already hidden at <=900px — drop its reserved grid column */
+  .ab-hero__demo .ab-demo__app {
+    grid-template-columns: 1fr;
+    height: 460px;
+  }
+
+  /* Stat cards stay in a 2x2 grid (already set at <=1024px), just tighten up */
+  .ab-hero__demo .dmo-stats {
+    gap: 8px;
+  }
+
+  .ab-hero__demo .dmo-stat {
+    padding: 10px 12px;
+  }
+
+  .ab-hero__demo .dmo-stat-value {
+    font-size: 1.1rem;
+  }
+
+  /* Browser top bar — shrink the URL pill so it doesn't push content */
+  .ab-hero__demo .ab-demo__url {
+    max-width: 180px;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .ab-hero__demo .ab-demo__bar-spacer {
+    width: 0;
+  }
+
+  /* App topbar — keep the page title, drop the search pill on phones */
+  .ab-hero__demo .ab-demo__search-mini {
+    display: none;
+  }
+
+  .ab-hero__demo .ab-demo__topbar {
+    padding: 0 14px;
   }
 
   /* Center the solo hero content */
@@ -66,6 +105,18 @@
 
   .ab-hero__ctas .ab-button {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On small phones, collapse the dashboard panels (Recent Clients + Activity)
+     to a single column and stack stat cards into one column */
+  .ab-hero__demo .dmo-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-hero__demo .dmo-stats {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
