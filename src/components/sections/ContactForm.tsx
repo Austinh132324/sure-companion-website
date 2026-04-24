@@ -15,13 +15,6 @@ type Stage = 'idle' | 'sending' | 'done';
 
 const EMPTY: FormState = { name: '', email: '', company: '', message: '' };
 
-const GREEN_PALETTE = {
-  navyDark: '#064E3B',
-  navyMid:  '#047857',
-  blue:     '#10B981',
-  blueLt:   '#6EE7B7',
-};
-
 export function ContactForm() {
   const [values, setValues] = useState<FormState>(EMPTY);
   const [stage, setStage] = useState<Stage>('idle');
@@ -62,7 +55,6 @@ export function ContactForm() {
         <AegisSpinner
           size={160}
           status={spinnerStatus}
-          palette={GREEN_PALETTE}
           onComplete={() => setStage('done')}
         />
         <p className="ab-contact-form__sending-label">
