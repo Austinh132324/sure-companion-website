@@ -37,7 +37,7 @@ export default function Contact() {
               </ul>
               <div className="ab-contact__contact-line">
                 <span className="eyebrow">Prefer email?</span>
-                <a href="mailto:hello@surecompanion.com">hello@surecompanion.com</a>
+                <a href="mailto:surecompanion@outlook.com">surecompanion@outlook.com</a>
               </div>
             </aside>
             <div className="ab-contact__form">

@@ -35,6 +35,18 @@ export function ContactForm() {
     event.preventDefault();
     setStage('sending');
     setSpinnerStatus('loading');
+
+    const subject = `Message from ${values.name || 'website visitor'}`;
+    const bodyLines = [
+      `Name: ${values.name}`,
+      `Email: ${values.email}`,
+      `Agency / company: ${values.company}`,
+      '',
+      values.message,
+    ];
+    const mailto = `mailto:surecompanion@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    window.location.href = mailto;
+
     timerRef.current = setTimeout(() => setSpinnerStatus('success'), 5000);
   };
 
@@ -136,7 +148,7 @@ export function ContactForm() {
           Send message
         </Button>
         <p className="ab-contact-form__fineprint">
-          This is a mock form. Submissions are not sent anywhere yet.
+          Sending opens a draft to surecompanion@outlook.com in your email app.
         </p>
       </div>
     </form>
