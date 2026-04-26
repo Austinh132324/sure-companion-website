@@ -321,7 +321,7 @@ function SettingsView() {
           <div className="dmo-settings-fields">
             {[
               { label: 'Agency Name', value: 'Sure Companion Agency' },
-              { label: 'Email',       value: 'contact@surecompanion.com' },
+              { label: 'Email',       value: 'surecompanion@outlook.com' },
               { label: 'Time Zone',   value: 'America / Chicago (CDT)' },
               { label: 'License #',   value: 'TX-INS-2094821' },
             ].map((f) => (
